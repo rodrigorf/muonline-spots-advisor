@@ -1,0 +1,6 @@
+pyautogui
+pydirectinput
+textract
+numpy
+pypiwin32
+pyqt5
