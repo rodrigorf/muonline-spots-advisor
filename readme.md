@@ -1,19 +1,27 @@
 ![Capture](https://user-images.githubusercontent.com/6570848/227750960-774112d2-0a5e-49d3-8cc8-f5c200b239ec.JPG)
 
 
+# Install 
+
+1. Clone the repository git clone [repository url].
+
+2. Navigate to the directory where you want the repository to be saved.
+
+3. Modify the settings.ini file if necessary only
+
+4. Run python run.py in the terminal to start the program.
+
+5. The program runs indefinitely, so you'll need to cancel it manually when you're done.
+
 # How to Use
 
+Run the MuOnline game executable
 
-Clone the repository git clone [repository url].
+When the code loop find a map name in the top left corner,
 
-Navigate to the directory where you want the repository to be saved.
+it will print it in the commandline
 
-Create a settings.ini file or modify the existing one.
-
-Run python3 main.py in the terminal to start the program.
-
-The program runs indefinitely, so you'll need to cancel it manually when you're done.
-
+**ROADMAP ALERT: the idea is to load huntspots based on the map name!! (Comming soon)**
 
 # Configuration
 
@@ -29,7 +37,6 @@ cropped_img - path where the cropped image will be saved
 
 
 # How it Works
-
 
 The necessary modules are imported: configparser, os, WindowsEngine, ImageUtils, and HeaderGenerator.
 
