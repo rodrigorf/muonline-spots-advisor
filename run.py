@@ -30,7 +30,7 @@ while(True):
     cropped_image_obj = imageUtils.crop_upper_left(None, screenshot_path, cropped_img_path)
 
     # Amplify the cropped image using the zoom_in_image function and save it
-    amplified_image_obj = imageUtils.zoom_in_image(cropped_image_obj, zoom_factor=8)
+    amplified_image_obj = imageUtils.zoom_in_image(cropped_image_obj, zoom_factor=12)
     amplified_image_obj.save(amplified_path)
 
     # Preprocess the amplified image and get the text from it
