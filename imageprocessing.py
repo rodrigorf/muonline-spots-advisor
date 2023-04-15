@@ -28,7 +28,7 @@ class ImageUtils:
         image_array = np.array(image)
 
         # Define the coordinates to crop the upper left corner
-        crop_coords = (0, 0, 160, 30) # (left, upper, right, lower)
+        crop_coords = (0, 0, 210, 30) # (left, upper, right, lower)
 
         # Crop the image array
         cropped_array = image_array[crop_coords[1]:crop_coords[3], crop_coords[0]:crop_coords[2]]
