@@ -4,3 +4,5 @@ textract
 numpy
 pypiwin32
 pyqt5
+fuzzywuzzy
+colorama

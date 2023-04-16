@@ -3,6 +3,8 @@ import configparser
 from engine import WindowsEngine
 from imageprocessing import ImageUtils
 from headergenerator import HeaderGenerator
+from common import MapLocations
+from colorama import Fore, Style
 
 my_header = HeaderGenerator("ChatGPT partially generated code", 50)
 my_header.generate_header()
@@ -22,7 +24,9 @@ cropped_img_path = config["PATHS"]["cropped_img"]
 win = WindowsEngine()
 imageUtils = ImageUtils()
 
+mapHandle = MapLocations()
 while(True):
+    start_time = time.time()
     # Get the screen executable and save it
     win.get_screen_executable('MU', screenshot_path)
 
@@ -36,10 +40,17 @@ while(True):
     # Preprocess the amplified image and get the text from it
     result = imageUtils.preprocess_image(amplified_path)
     cleanArray = [x for x in result.split('\n') if x.strip() != '']
-    name = cleanArray[0]
-    coord = cleanArray[1]
-    print(f'Text collected: {name} -- Coordinates: {coord}')
-    
+    if(len(cleanArray) > 0):
+        joinArray = ' '.join(cleanArray).strip()
+        name = joinArray.split(' ')[0]
+        coord = joinArray.split(' ')[1]
+        print(f'{Fore.GREEN}Text collected: {name} -- Coordinates: {coord}{Style.RESET_ALL}')
+        print(f'{Fore.YELLOW}Map spots image: {mapHandle.get_location(name.lower())}{Style.RESET_ALL}')
+    else:
+        print(f'{Fore.RED}No map name visible.{Style.RESET_ALL}')
+
     time.sleep(int(config["SETTINGS"]["wait_interval"]))
 
+    elapsed_time = time.time() - start_time
+    print(f'{Fore.BLUE}Elapsed time: {elapsed_time:.2f} seconds{Style.RESET_ALL}\n')
 
