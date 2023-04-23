@@ -44,13 +44,14 @@ while(True):
         joinArray = ' '.join(cleanArray).strip()
         name = joinArray.split(' ')[0]
         coord = joinArray.split(' ')[1]
-        print(f'{Fore.GREEN}Text collected: {name} -- Coordinates: {coord}{Style.RESET_ALL}')
-        print(f'{Fore.YELLOW}Map spots image: {mapHandle.get_location(name.lower())}{Style.RESET_ALL}')
+        print(f'{Fore.GREEN}Name:{Fore.WHITE} {name}')
+        print(f'{Fore.GREEN}Coordinates:{Fore.WHITE} {coord}')
+        print(f'{Fore.YELLOW}Map spots image:{Fore.WHITE} {mapHandle.get_location(name.lower())}{Style.RESET_ALL}')
     else:
         print(f'{Fore.RED}No map name visible.{Style.RESET_ALL}')
 
     time.sleep(int(config["SETTINGS"]["wait_interval"]))
 
     elapsed_time = time.time() - start_time
-    print(f'{Fore.BLUE}Elapsed time: {elapsed_time:.2f} seconds{Style.RESET_ALL}\n')
+    print(f'{Fore.BLUE}Elapsed time:{Fore.WHITE} {elapsed_time:.2f} seconds{Style.RESET_ALL}\n')
 

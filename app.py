@@ -53,8 +53,8 @@ class MainWindow(QMainWindow):
         app.setPalette(dark_palette)
         
         # Create main window
-        self.setWindowTitle("Discord Clone")
-        self.setGeometry(100, 100, 700, 500)
+        self.setWindowTitle("Muonline Hunting Assistant")
+        self.setGeometry(100, 100, 600, 500)
 
         # Create status bar
         status_bar = QStatusBar()
@@ -69,7 +69,7 @@ class MainWindow(QMainWindow):
 
         # Add the first image label to the layout
         image_label1 = QLabel(self)
-        image1 = QPixmap("images/spots/map_spots.png")
+        image1 = QPixmap("images/spots/lorencia.png")
         image_label1.setPixmap(image1)
         layout.addWidget(image_label1)
 
